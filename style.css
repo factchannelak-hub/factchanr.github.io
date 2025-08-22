@@ -47,3 +47,41 @@
 .note-card h3 {
   color: #2c3e50;
 }
+/* Header / Navbar */
+.site-header {
+  position: sticky; top: 0; z-index: 999;
+  background: #fff; border-bottom: 1px solid #eee;
+}
+.site-header .container {
+  max-width: 1100px; margin: 0 auto;
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-weight: 700; text-decoration: none; color: #111; }
+
+#mainNav { list-style: none; display: flex; gap: 14px; margin: 0; padding: 0; }
+#mainNav a { text-decoration: none; padding: 8px 10px; border-radius: 6px; display: block; color: #111; }
+#mainNav a:hover { background: #f3f4f6; }
+
+.has-sub { position: relative; }
+.has-sub .sub {
+  display: none; position: absolute; top: 36px; left: 0;
+  background: #fff; border: 1px solid #eee; border-radius: 8px;
+  list-style: none; min-width: 180px; padding: 8px 0;
+}
+.has-sub .sub li a { padding: 8px 12px; }
+.has-sub:hover .sub { display: block; }
+
+#menuToggle { display: none; font-size: 20px; background: none; border: none; cursor: pointer; }
+
+@media (max-width: 720px) {
+  #menuToggle { display: block; }
+  #mainNav {
+    display: none; flex-direction: column;
+    position: absolute; left: 0; right: 0; top: 60px;
+    background: #fff; border-top: 1px solid #eee; padding: 10px 16px;
+  }
+  #mainNav.open { display: flex; }
+  .has-sub:hover .sub { display: none; } /* Mobile: hover nahi, click pe khulna chahiye */
+  .has-sub .sub { position: static; border: none; border-radius: 0; }
+}
