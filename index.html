@@ -3,10 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aman Kumar Portfolio</title>
+  <title>Aman Kumar | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #222;
+      border-bottom: 2px solid #333;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      background: #333;
+      color: #fff;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Aman Kumar's Portfolio 🚀</h1>
-  <p>Yeh meri pehli website hai jo GitHub Pages par chal rahi hai!</p>
+  <header>
+    <h1>Aman Kumar</h1>
+    <p>Welcome to my Portfolio 🚀</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm Aman Kumar. This is my personal portfolio website where I share my skills, projects, and journey as a developer.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python & Web Development</li>
+      <li>Problem Solving & Creativity</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Project 1</h3>
+        <p>A short description of your project goes here.</p>
+      </div>
+      <div class="project">
+        <h3>Project 2</h3>
+        <p>A short description of another project goes here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: yourname@email.com</p>
+    <p>GitHub: <a href="https://github.com/factchanr" target="_blank">github.com/factchanr</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Aman Kumar | Portfolio Website</p>
+  </footer>
 </body>
 </html>
