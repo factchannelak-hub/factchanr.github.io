@@ -1,64 +1,66 @@
-.admission-section h2 {
-  font-size: 22px;
-  color: #0d47a1;
-  margin-bottom: 15px;
-}
-.admission-grid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.admission-btn {
-  display: block;
-  padding: 14px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-.admission-btn:hover {
-  transform: translateY(-3px);
-}
-.red { background: #e53935; }
-.blue { background: #1e88e5; }
-.green { background: #43a047; }
-.orange { background: #fb8c00; }
+/* General Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; line-height:1.6; background:#f9f9f9; color:#333; }
 
-.vacancy-section {
-  padding: 20px;
+/* Navbar */
+.navbar {
+  background:#0d47a1;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
 }
-.vacancy-section h2 {
-  margin-bottom: 15px;
-  font-size: 22px;
-  color: #0d47a1;
+.logo { font-size:18px; font-weight:bold; }
+.nav-links { list-style:none; display:flex; gap:15px; }
+.nav-links a {
+  color:#fff; text-decoration:none; padding:6px 10px; border-radius:4px;
 }
-.vacancy-grid {
-  display: grid;
+.nav-links a:hover, .nav-links .active {
+  background:#1565c0;
+}
+
+/* Hero */
+.hero {
+  text-align:center;
+  background:#e3f2fd;
+  padding:40px 15px;
+}
+.hero h1 { font-size:32px; color:#0d47a1; margin-bottom:10px; }
+.hero p { font-size:18px; }
+
+/* Section */
+.section { padding:20px; }
+.section h2 { margin-bottom:15px; color:#0d47a1; }
+
+/* Card Grid */
+.card-grid {
+  display:grid;
+  gap:12px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
 }
-.vacancy-btn {
-  display: block;
-  padding: 12px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: transform 0.3s;
+.card {
+  display:block;
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#333;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  transition:0.3s;
 }
-.vacancy-btn:hover {
-  transform: translateY(-3px);
+.card:hover {
+  background:#0d47a1;
+  color:#fff;
+  transform:translateY(-3px);
 }
-.red { background: #e74c3c; }
-.green { background: #2ecc71; }
-.blue { background: #3498db; }
-.purple { background: #9b59b6; }
-.orange { background: #e67e22; }
-.teal { background: #16a085; }
-.brown { background: #8e5c42; }
-.darkgreen { background: #2e7d32; }
-.admission-section {
-  padding: 20px;
+
+/* Footer */
+footer {
+  text-align:center;
+  background:#0d47a1;
+  color:#fff;
+  padding:15px;
+  margin-top:20px;
 }
+footer a { color:#ffeb3b; }
