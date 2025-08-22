@@ -6,82 +6,101 @@
   font-family: Arial, sans-serif;
 }
 
-/* Body */
-body {
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
+/* Top Header */
+.top-header {
+  background: #c62828; /* Dark Red */
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+.top-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.top-header p {
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 /* Navbar */
-nav {
-  background: #222;
-  color: #fff;
-  padding: 15px 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.navbar {
+  background: #000; /* Black */
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
-
-nav a {
-  color: #fff;
+.navbar a {
+  color: white;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
-  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: #ffeb3b; /* Yellow hover */
 }
 
-nav a:hover {
-  color: #ff9800;
-}
-
-/* Section styling */
-section {
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-section h2 {
-  margin-bottom: 20px;
-  color: #444;
-  border-bottom: 3px solid #ff9800;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-/* Cards */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  flex: 1 1 calc(33% - 20px);
-  background: white;
-  border-radius: 10px;
+/* Updates Section */
+.updates {
   padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+}
+.updates h2 {
+  color: #c62828;
+  margin-bottom: 15px;
+}
+.updates ul {
+  list-style-type: none;
+}
+.updates li {
+  margin: 8px 0;
+}
+.updates a {
+  color: #1565c0; /* Blue links */
+  text-decoration: underline;
+  font-size: 16px;
+}
+.updates a:hover {
+  color: #c62828;
 }
 
+/* Study Materials */
+.study {
+  padding: 20px;
+}
+.study h2 {
+  color: #2e7d32; /* Green */
+  margin-bottom: 15px;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.card a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
 .card:hover {
-  transform: translateY(-5px);
-}
-
-@media (max-width: 768px) {
-  .card {
-    flex: 1 1 100%;
-  }
+  background: #e3f2fd;
+  transform: scale(1.02);
 }
 
 /* Footer */
 footer {
-  background: #222;
-  color: #fff;
+  background: #000;
+  color: white;
   text-align: center;
   padding: 15px;
   margin-top: 30px;
+}
+footer p {
+  font-size: 14px;
 }
