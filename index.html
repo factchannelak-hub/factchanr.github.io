@@ -31,25 +31,28 @@
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
     section {
-      padding: 40px 20px;
+      padding: 30px;
       max-width: 900px;
       margin: auto;
     }
     h2 {
-      color: #222;
-      border-bottom: 2px solid #333;
-      display: inline-block;
-      margin-bottom: 20px;
+      color: #444;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
     }
-    .projects {
+    .skills, .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
     }
-    .project {
+    .card {
       background: #fff;
-      padding: 20px;
+      padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
@@ -58,11 +61,12 @@
       background: #333;
       color: #fff;
       padding: 15px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Aman Kumar</h1>
     <p>Welcome to my Portfolio 🚀</p>
@@ -76,27 +80,32 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi, I'm Aman Kumar. This is my personal portfolio website where I share my skills, projects, and journey as a developer.</p>
+    <p>Hi, I'm <strong>Aman Kumar</strong>. This is my personal portfolio website where I share my skills, projects, and journey as a developer. I love building websites and learning new technologies.</p>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Python & Web Development</li>
-      <li>Problem Solving & Creativity</li>
-    </ul>
+    <div class="skills">
+      <div class="card">HTML, CSS, JavaScript</div>
+      <div class="card">Python & Web Development</div>
+      <div class="card">Problem Solving</div>
+      <div class="card">Creative Designing</div>
+    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-      <div class="project">
+      <div class="card">
         <h3>Project 1</h3>
-        <p>A short description of your project goes here.</p>
+        <p>A short description of your first project goes here.</p>
       </div>
-      <div class="project">
+      <div class="card">
         <h3>Project 2</h3>
+        <p>A short description of your second project goes here.</p>
+      </div>
+      <div class="card">
+        <h3>Project 3</h3>
         <p>A short description of another project goes here.</p>
       </div>
     </div>
@@ -104,12 +113,13 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: amankumarprasad2005@gmail.com</p>
+    <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
     <p>GitHub: <a href="https://github.com/factchanr" target="_blank">github.com/factchanr</a></p>
   </section>
 
   <footer>
     <p>© 2025 Aman Kumar | Portfolio Website</p>
   </footer>
+
 </body>
 </html>
