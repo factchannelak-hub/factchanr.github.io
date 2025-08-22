@@ -3,53 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latest Vacancies</title>
+  <title>Job Vacancies | Aman Kumar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>📝 Latest Vacancies</h1>
-    <a href="index.html" class="btn">⬅ Back to Home</a>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="study.html">Study</a>
+    <a href="vacancy.html">Vacancies</a>
+  </nav>
 
-  <!-- Search Bar -->
-  <input type="text" id="searchBox" placeholder="Search jobs..." onkeyup="searchJob()">
-
-  <!-- Job Cards -->
-  <section id="vacancyList">
-    <div class="vacancy-card">
-      <h3>SSC CGL 2025</h3>
-      <p>Total Posts: 7500 | Last Date: 15 Sept 2025</p>
-      <a href="https://ssc.nic.in" class="btn" target="_blank">Apply Now</a>
-    </div>
-
-    <div class="vacancy-card">
-      <h3>Railway Group D</h3>
-      <p>Total Posts: 45,000 | Last Date: 25 Aug 2025</p>
-      <a href="https://indianrailways.gov.in" class="btn" target="_blank">Apply Now</a>
-    </div>
-
-    <div class="vacancy-card">
-      <h3>IBPS PO</h3>
-      <p>Banking Job | Last Date: 30 Sept 2025</p>
-      <a href="https://ibps.in" class="btn" target="_blank">Apply Now</a>
+  <section id="vacancies">
+    <h2>Latest Job Vacancies</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>SSC GD Constable</h3>
+        <p>Apply Last Date: 30 Sept 2025</p>
+        <a href="#">Apply Now</a>
+      </div>
+      <div class="card">
+        <h3>Railway Apprentice</h3>
+        <p>Apply Last Date: 10 Oct 2025</p>
+        <a href="#">Apply Now</a>
+      </div>
+      <div class="card">
+        <h3>Bank PO Recruitment</h3>
+        <p>Apply Last Date: 20 Oct 2025</p>
+        <a href="#">Apply Now</a>
+      </div>
     </div>
   </section>
 
-  <script>
-    function searchJob() {
-      let input = document.getElementById('searchBox').value.toLowerCase();
-      let jobs = document.getElementsByClassName('vacancy-card');
-
-      for (let i = 0; i < jobs.length; i++) {
-        let title = jobs[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        if (title.includes(input)) {
-          jobs[i].style.display = "block";
-        } else {
-          jobs[i].style.display = "none";
-        }
-      }
-    }
-  </script>
+  <footer>
+    <p>© 2025 Aman Kumar | Vacancies</p>
+  </footer>
 </body>
 </html>
