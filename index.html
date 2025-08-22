@@ -1,34 +1,29 @@
-<section id="study">
-  <h2>📚 Study Material</h2>
-  <div class="study-container">
-    <div class="subject-card">
-      <h3>Mathematics</h3>
-      <p>Formulas, Notes, Practice Questions</p>
-      <a href="maths.html" class="btn">Explore</a>
-    </div>
-    <div class="subject-card">
-      <h3>General Knowledge</h3>
-      <p>Important Questions & Current Affairs</p>
-      <a href="gk.html" class="btn">Explore</a>
-    </div>
-    <div class="subject-card">
-      <h3>Computer</h3>
-      <p>Programming & IT Notes</p>
-      <a href="computer.html" class="btn">Explore</a>
-    </div>
-  </div>
-</section>
-<section id="vacancies">
-  <h2>📝 Latest Vacancies</h2>
-  <div class="vacancy-card">
-    <h3>SSC CGL 2025</h3>
-    <p>Total Posts: 7500 | Last Date: 15 Sept 2025</p>
-    <a href="https://ssc.nic.in" target="_blank" class="btn">Apply Now</a>
-  </div>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Aman Kumar</a>
 
-  <div class="vacancy-card">
-    <h3>Railway Group D</h3>
-    <p>Total Posts: 45,000 | Last Date: 25 Aug 2025</p>
-    <a href="https://indianrailways.gov.in" target="_blank" class="btn">Apply Now</a>
+    <button id="menuToggle" aria-label="Toggle menu">☰</button>
+
+    <ul id="mainNav">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-sub">
+        <a href="study.html">Study</a>
+        <ul class="sub">
+          <li><a href="maths.html">Mathematics</a></li>
+          <li><a href="gk.html">General Knowledge</a></li>
+          <li><a href="computer.html">Computer</a></li>
+        </ul>
+      </li>
+      <li><a href="vacancy.html">Vacancies</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
   </div>
-</section>
+</header>
+<script>
+  const btn = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  btn?.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
