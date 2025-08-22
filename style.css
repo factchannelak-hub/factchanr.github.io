@@ -31,3 +31,33 @@
 .teal { background: #16a085; }
 .brown { background: #8e5c42; }
 .darkgreen { background: #2e7d32; }
+.admission-section {
+  padding: 20px;
+}
+.admission-section h2 {
+  font-size: 22px;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+.admission-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.admission-btn {
+  display: block;
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.admission-btn:hover {
+  transform: translateY(-3px);
+}
+.red { background: #e53935; }
+.blue { background: #1e88e5; }
+.green { background: #43a047; }
+.orange { background: #fb8c00; }
