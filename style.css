@@ -7,114 +7,172 @@
 }
 
 body {
-  background: #f9f9f9;
+  background: #f4f4f4;
   color: #333;
-  line-height: 1.6;
 }
 
 /* Header */
-.main-header {
-  background: #cc0000;
+header {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
   color: #fff;
   text-align: center;
-  padding: 15px 10px;
+  padding: 15px;
 }
 
-.main-header h1 {
+header h1 {
   font-size: 28px;
-  margin-bottom: 5px;
+}
+header p {
+  font-size: 14px;
 }
 
 /* Navbar */
-.navbar {
+nav {
+  background: #0a2342;
+}
+nav ul {
   display: flex;
   justify-content: center;
-  background: #000;
   flex-wrap: wrap;
-}
-
-.navbar a {
-  color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  background: #cc0000;
-  color: #fff;
-}
-
-/* Section */
-.section {
-  padding: 20px;
-}
-
-.section h2 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  color: #cc0000;
-}
-
-/* Job Boxes */
-.job-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.job-box {
-  flex: 1 1 200px;
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 5px;
-  color: #fff;
-}
-
-.job-box a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Colors */
-.red { background: #e74c3c; }
-.green { background: #27ae60; }
-.blue { background: #2980b9; }
-.orange { background: #e67e22; }
-
-/* 3 Column Layout */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.list-links {
   list-style: none;
 }
-
-.list-links li {
-  padding: 8px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.list-links li a {
+nav ul li a {
+  color: #fff;
+  padding: 10px 15px;
+  display: block;
   text-decoration: none;
-  color: #0066cc;
+}
+nav ul li a:hover {
+  background: #0072ff;
 }
 
-.list-links li a:hover {
-  color: #e60000;
-  text-decoration: underline;
+/* Join Section */
+.join-section {
+  text-align: center;
+  margin: 10px 0;
+}
+.join {
+  padding: 8px 15px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+.whatsapp {
+  background: #25D366;
+}
+.telegram {
+  background: #0088cc;
+}
+
+/* Live */
+.live {
+  text-align: center;
+  margin: 10px;
+}
+.live span {
+  border: 1px solid #000;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Search Box */
+.search-box {
+  text-align: center;
+  margin: 10px 0;
+}
+.search-box input {
+  padding: 8px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.search-box button {
+  padding: 8px 12px;
+  border: none;
+  background: #0072ff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Top Links */
+.top-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0;
+}
+.top-links .box {
+  flex: 1 1 200px;
+  margin: 5px;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.red { background: #e74c3c; }
+.green { background: #27ae60; }
+.blue { background: #3498db; }
+.purple { background: #9b59b6; }
+.orange { background: #e67e22; }
+.teal { background: #1abc9c; }
+.darkgreen { background: #16a085; }
+.darkblue { background: #2c3e50; }
+
+/* Updates Section */
+.updates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin: 20px;
+}
+.column {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.column h2 {
+  background: #0072ff;
+  color: #fff;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.column ul {
+  list-style: none;
+}
+.column ul li {
+  padding: 5px 0;
+}
+.column ul li a {
+  text-decoration: none;
+  color: #0072ff;
+}
+.view-more {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  padding: 6px;
+  background: #0072ff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 /* Footer */
-.footer {
-  background: #000;
+footer {
+  background: #0a2342;
   color: #fff;
   text-align: center;
-  padding: 12px;
+  padding: 15px;
   margin-top: 20px;
+}
+footer a {
+  color: #00c6ff;
+  text-decoration: none;
 }
