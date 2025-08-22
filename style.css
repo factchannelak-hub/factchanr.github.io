@@ -1,87 +1,87 @@
-08.22 8:25 PM
-#study, #vacancies {
-  padding: 50px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+  background: #222;
+  color: #fff;
+  padding: 15px 20px;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.subject-card, .vacancy-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 15px;
-  display: inline-block;
-  width: 250px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-}
-
-.subject-card h3, .vacancy-card h3 {
-  color: #2c3e50;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #3498db;
-  color: white;
-  border-radius: 5px;
+nav a {
+  color: #fff;
   text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
 }
-.btn:hover {
-  background: #2980b9;
+
+nav a:hover {
+  color: #ff9800;
 }
-.notes {
-  padding: 30px;
+
+/* Section styling */
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  color: #444;
+  border-bottom: 3px solid #ff9800;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Cards */
+.card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
 }
-.note-card {
-  border: 1px solid #ddd;
+
+.card {
+  flex: 1 1 calc(33% - 20px);
+  background: white;
   border-radius: 10px;
   padding: 20px;
-  margin: 15px;
-  width: 250px;
   box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
+  transition: transform 0.3s;
 }
-.note-card h3 {
-  color: #2c3e50;
-}
-/* Header / Navbar */
-.site-header {
-  position: sticky; top: 0; z-index: 999;
-  background: #fff; border-bottom: 1px solid #eee;
-}
-.site-header .container {
-  max-width: 1100px; margin: 0 auto;
-  padding: 10px 16px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.logo { font-weight: 700; text-decoration: none; color: #111; }
 
-#mainNav { list-style: none; display: flex; gap: 14px; margin: 0; padding: 0; }
-#mainNav a { text-decoration: none; padding: 8px 10px; border-radius: 6px; display: block; color: #111; }
-#mainNav a:hover { background: #f3f4f6; }
-
-.has-sub { position: relative; }
-.has-sub .sub {
-  display: none; position: absolute; top: 36px; left: 0;
-  background: #fff; border: 1px solid #eee; border-radius: 8px;
-  list-style: none; min-width: 180px; padding: 8px 0;
+.card:hover {
+  transform: translateY(-5px);
 }
-.has-sub .sub li a { padding: 8px 12px; }
-.has-sub:hover .sub { display: block; }
 
-#menuToggle { display: none; font-size: 20px; background: none; border: none; cursor: pointer; }
-
-@media (max-width: 720px) {
-  #menuToggle { display: block; }
-  #mainNav {
-    display: none; flex-direction: column;
-    position: absolute; left: 0; right: 0; top: 60px;
-    background: #fff; border-top: 1px solid #eee; padding: 10px 16px;
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
   }
-  #mainNav.open { display: flex; }
-  .has-sub:hover .sub { display: none; } /* Mobile: hover nahi, click pe khulna chahiye */
-  .has-sub .sub { position: static; border: none; border-radius: 0; }
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
 }
