@@ -29,3 +29,21 @@
 .btn:hover {
   background: #2980b9;
 }
+.notes {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.note-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  width: 250px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.note-card h3 {
+  color: #2c3e50;
+}
