@@ -64,6 +64,27 @@
   text-decoration: none;
   color: #0066cc;
 }
+/* List page links */
+.list-links {
+  list-style: none;
+  padding: 0;
+}
+
+.list-links li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-links li a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.list-links li a:hover {
+  text-decoration: underline;
+  color: #e60000;
+}
 
 .col ul li a:hover {
   text-decoration: underline;
