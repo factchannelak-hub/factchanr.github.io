@@ -1,29 +1,66 @@
-<header class="site-header">
-  <div class="container">
-    <a class="logo" href="index.html">Aman Kumar</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aman Kumar | Portfolio & Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#study">Study</a>
+    <a href="#vacancies">Vacancies</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <button id="menuToggle" aria-label="Toggle menu">☰</button>
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Hi, I'm Aman Kumar. Welcome to my portfolio & study website 🚀</p>
+  </section>
 
-    <ul id="mainNav">
-      <li><a href="index.html">Home</a></li>
-      <li class="has-sub">
-        <a href="study.html">Study</a>
-        <ul class="sub">
-          <li><a href="maths.html">Mathematics</a></li>
-          <li><a href="gk.html">General Knowledge</a></li>
-          <li><a href="computer.html">Computer</a></li>
-        </ul>
-      </li>
-      <li><a href="vacancy.html">Vacancies</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
-<script>
-  const btn = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
-  btn?.addEventListener('click', () => nav.classList.toggle('open'));
-</script>
+  <!-- Study Section -->
+  <section id="study">
+    <h2>Study Materials</h2>
+    <div class="card-container">
+      <div class="card">📘 Mathematics Notes</div>
+      <div class="card">📗 General Knowledge</div>
+      <div class="card">💻 Computer Basics</div>
+    </div>
+  </section>
+
+  <!-- Vacancy Section -->
+  <section id="vacancies">
+    <h2>Job Vacancies</h2>
+    <div class="card-container">
+      <div class="card">Vacancy 1 – Government Job</div>
+      <div class="card">Vacancy 2 – Private Sector</div>
+      <div class="card">Vacancy 3 – Internship</div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am Aman Kumar, passionate about learning and sharing knowledge.  
+      This website provides study materials and latest job updates for students.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: aman@example.com</p>
+    <p>Telegram Group: <a href="#">Join Here</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Aman Kumar | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
