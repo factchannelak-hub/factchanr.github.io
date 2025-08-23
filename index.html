@@ -1,73 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Updated Bihar - Bihar का No.1 Education Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarkari Result – All Links</title>
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121933; --muted:#a0a6c3; --text:#e7ecff; --accent:#5b8cff; --chip:#1d2750;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Noto Sans",sans-serif;background:linear-gradient(160deg,var(--bg),#0e1226 50%,#111633);color:var(--text)}
+    header{position:sticky;top:0;backdrop-filter:saturate(150%) blur(6px);background:rgba(10,14,33,.6);border-bottom:1px solid #1f2546;z-index:20}
+    .wrap{max-width:1024px;margin:auto;padding:16px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand h1{font-size:20px;margin:0}
+    .brand small{color:var(--muted)}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    input[type="search"], select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a3160;background:#0f1530;color:var(--text)}
+    main{padding:20px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+    .card{background:var(--card);border:1px solid #222a55;border-radius:16px;padding:14px;transition:transform .12s ease,box-shadow .12s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .chip{display:inline-flex;align-items:center;gap:6px;background:var(--chip);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
+    .title{display:block;margin:10px 0 6px;font-weight:650;color:var(--text);text-decoration:none}
+    .title:hover{color:var(--accent)}
+    .meta{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+    footer{color:#95a0cf;border-top:1px dashed #2a3160;margin-top:28px;padding:20px 0}
+    .empty{opacity:.8;text-align:center;padding:28px;border:1px dashed #2a3160;border-radius:16px}
+  </style>
 </head>
 <body>
-
-  <!-- Navbar -->
   <header>
-    <nav class="navbar">
-      <div class="logo">📘 Updated Bihar</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="admission.html">Admission</a></li>
-        <li><a href="scholarship.html">Scholarship</a></li>
-        <li><a href="results.html">Result</a></li>
-        <li><a href="admitcard.html">Admit Card</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Updated Bihar</h1>
-    <p>बिहार का No.1 Education Website for Jobs, Results, Admission & More</p>
-  </section>
-
-  <!-- Latest Updates -->
-  <section class="section">
-    <h2>🔥 Latest Updates</h2>
-    <div class="card-grid">
-      <a href="#" class="card">Bihar Deled Admit Card 2025</a>
-      <a href="#" class="card">BTSC Staff Nurse Result 2025</a>
-      <a href="#" class="card">Bihar Police SI Admit Card 2025</a>
-      <a href="#" class="card">Sakshamta Pariksha Answer Key 2025</a>
+    <div class="wrap">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="#5b8cff" stroke-width="1.5"/><path d="M8 9h8M8 12h8M8 15h5" stroke="#c6d4ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div>
+          <h1>Sarkari Result – All Links</h1>
+          <small>एक ही पेज पर सारे रिज़ल्ट्स / Answer Keys / Merit Lists के लिंक जोड़ें</small>
+        </div>
+      </div>
+      <div class="controls">
+        <input id="q" type="search" placeholder="खोजें: जैसे 'BTSC', 'Railway', '2025' …" />
+        <select id="dept">
+          <option value="">सभी विभाग</option>
+          <option>BTSC</option>
+          <option>Bihar Police</option>
+          <option>Railway</option>
+          <option>Education</option>
+          <option>Other</option>
+        </select>
+      </div>
     </div>
-  </section>
+  </header>  <main class="wrap">
+    <section>
+      <h2 style="margin:0 0 12px; font-size:18px; color:#cbd5ff">Latest Results</h2>
+      <div id="cards" class="grid"></div>
+      <div id="empty" class="empty" style="display:none">कोई नतीजा नहीं मिला। ऊपर सर्च/फ़िल्टर बदलें।</div>
+    </section><footer>
+  <div>Note: नीचे दिए गये उदाहरणों में href="#" है — अपनी वास्तविक URL यहाँ डालें। आप चाहें तो <code>data</code> एरे में नई एंट्री जोड़ते जाएँ।</div>
+</footer>
 
-  <!-- Jobs Section -->
-  <section class="section">
-    <h2>💼 Latest Jobs</h2>
-    <div class="card-grid">
-      <a href="#" class="card">UP Police SI Recruitment 2025</a>
-      <a href="#" class="card">Bihar ANM Vacancy 2025</a>
-      <a href="#" class="card">Railway RRB Paramedical 2025</a>
-      <a href="#" class="card">IB Security Assistant Vacancy 2025</a>
-    </div>
-  </section>
+  </main>  <script>
+    // ⬇️ यहीं अपनी असली लिंक्स भरें — जितने चाहें उतने
+    const data = [
+      // उदाहरण (स्क्रीनशॉट के आधार पर)
+      { title: "BTSC Staff Nurse Result 2025", url: "#", dept: "BTSC", date: "2025", tag: "Result" },
+      { title: "Sakshamta Pariksha Answer Key 2025", url: "#", dept: "Education", date: "2025", tag: "Answer Key" },
+      { title: "Railway RRB Paramedical Result 2025", url: "#", dept: "Railway", date: "2025", tag: "Result" },
+      { title: "IB Security Assistant Result 2025", url: "#", dept: "Other", date: "2025", tag: "Result" },
+      { title: "Bihar ANM Result / Merit List 2025", url: "#", dept: "BTSC", date: "2025", tag: "Merit List" },
+      { title: "Bihar Police SI Result 2025", url: "#", dept: "Bihar Police", date: "2025", tag: "Result" },
+      // ---- अपनी और एंट्रीज़ नीचे जोड़ें ----
+      // { title: "Exam Name Result Year", url: "https://your-url.com/page", dept: "Department", date: "2025", tag: "Result" },
+    ];
 
-  <!-- Sarkari Yojana -->
-  <section class="section">
-    <h2>📜 Sarkari Yojana</h2>
-    <div class="card-grid">
-      <a href="#" class="card">Bihar Residence Certificate Apply 2025</a>
-      <a href="#" class="card">Bihar Caste Certificate Apply 2025</a>
-      <a href="#" class="card">Income Certificate Apply 2025</a>
-      <a href="#" class="card">EWS Certificate Apply 2025</a>
-    </div>
-  </section>
+    const cardsEl = document.getElementById('cards');
+    const emptyEl = document.getElementById('empty');
+    const qEl = document.getElementById('q');
+    const deptEl = document.getElementById('dept');
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Updated Bihar | Contact: 
-      <a href="mailto:amankumarprasad2005@gmail.com">amankumarprasad2005@gmail.com</a>
-    </p>
-  </footer>
+    function render(list){
+      cardsEl.innerHTML = '';
+      if(!list.length){ emptyEl.style.display = 'block'; return; }
+      emptyEl.style.display = 'none';
+      list.forEach(item => {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <span class="chip">${item.tag || 'Result'}</span>
+          <a class="title" href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
+          <div class="meta">
+            <span>विभाग: ${item.dept || '—'}</span>
+            <span>Year: ${item.date || ''}</span>
+          </div>
+        `;
+        cardsEl.appendChild(el);
+      });
+    }
 
-</body>
+    function filter(){
+      const q = (qEl.value || '').toLowerCase().trim();
+      const d = (deptEl.value || '').toLowerCase().trim();
+      const out = data.filter(x => {
+        const okText = !q || [x.title, x.dept, x.tag, x.date].filter(Boolean).join(' ').toLowerCase().includes(q);
+        const okDept = !d || (x.dept||'').toLowerCase() === d;
+        return okText && okDept;
+      });
+      render(out);
+    }
+
+    qEl.addEventListener('input', filter);
+    deptEl.addEventListener('change', filter);
+
+    // initial render
+    render(data);
+  </script></body>
 </html>
