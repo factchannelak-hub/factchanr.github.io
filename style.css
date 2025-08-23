@@ -1,66 +1,259 @@
-/* General Reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: Arial, sans-serif; line-height:1.6; background:#f9f9f9; color:#333; }
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Updated Bihar | Sarkari Result Style Portal</title>
+  <meta name="description" content="Updated Bihar – Sarkari Result style updates for Jobs, Admit Card, Results, Syllabus, Answer Key."/>
+  <style>
+    :root{
+      --brand:#d71920;        /* header red */
+      --brand-dark:#b31319;   /* darker red */
+      --ink:#0f172a;          /* slate-900 */
+      --muted:#475569;        /* slate-600 */
+      --bg:#f8fafc;           /* slate-50 */
+      --card:#ffffff;         /* white */
+      --link:#0ea5e9;         /* sky-500 */
+      --chip:#0f766e;         /* teal-700 */
+      --ok:#16a34a;           /* green */
+      --warn:#eab308;         /* yellow */
+      --danger:#ef4444;       /* red */
+      --shadow:0 10px 20px rgba(2,6,23,.06), 0 2px 6px rgba(2,6,23,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin-inline:auto;padding:16px}/* Header */
+.topbar{background:var(--brand);color:#fff}
+.brand{display:flex;align-items:center;justify-content:center;gap:12px;padding:22px 10px;font-weight:800;letter-spacing:.3px;font-size:clamp(22px,3vw,34px)}
+.brand small{display:block;font-weight:600;font-size:.55em;opacity:.9}
 
-/* Navbar */
-.navbar {
-  background:#0d47a1;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 20px;
-}
-.logo { font-size:18px; font-weight:bold; }
-.nav-links { list-style:none; display:flex; gap:15px; }
-.nav-links a {
-  color:#fff; text-decoration:none; padding:6px 10px; border-radius:4px;
-}
-.nav-links a:hover, .nav-links .active {
-  background:#1565c0;
-}
+/* Nav */
+.nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:30}
+.nav .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;padding:8px}
+.nav a{color:var(--ink);font-weight:600;padding:8px 12px;border-radius:10px}
+.nav a:hover{background:#f1f5f9}
+.search{margin-left:auto;display:flex;gap:8px}
+.search input{padding:10px 12px;border:1px solid #e2e8f0;border-radius:12px;min-width:220px}
+.search button{padding:10px 14px;border:0;border-radius:12px;background:var(--ink);color:#fff;font-weight:700}
 
-/* Hero */
-.hero {
-  text-align:center;
-  background:#e3f2fd;
-  padding:40px 15px;
-}
-.hero h1 { font-size:32px; color:#0d47a1; margin-bottom:10px; }
-.hero p { font-size:18px; }
+/* Hero Quick Links */
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}
+.chip{background:var(--card);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;border:1px solid #e2e8f0}
+.chip b{font-size:15px}
+.chip span{font-size:12px;color:#64748b;background:#f1f5f9;padding:6px 10px;border-radius:999px;border:1px solid #e2e8f0}
 
-/* Section */
-.section { padding:20px; }
-.section h2 { margin-bottom:15px; color:#0d47a1; }
+/* Sections */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:1000px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:680px){.grid{grid-template-columns:1fr}}
 
-/* Card Grid */
-.card-grid {
-  display:grid;
-  gap:12px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-.card {
-  display:block;
-  background:#fff;
-  padding:15px;
-  border-radius:8px;
-  text-decoration:none;
-  color:#333;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-.card:hover {
-  background:#0d47a1;
-  color:#fff;
-  transform:translateY(-3px);
-}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);box-shadow:var(--shadow)}
+.card h2{margin:0;padding:16px 16px 10px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:10px}
+.card h2 .dot{width:10px;height:10px;border-radius:999px;display:inline-block}
+.card h2 .dot.green{background:var(--ok)}
+.card h2 .dot.blue{background:#3b82f6}
+.card h2 .dot.orange{background:#fb923c}
+.card .body{padding:10px 14px 16px}
+
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.list li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid #e2e8f0;border-radius:12px}
+.list li:hover{background:#f8fafc}
+.badge{font-size:11px;font-weight:700;padding:4px 8px;border-radius:999px;color:#fff}
+.b-green{background:var(--ok)}
+.b-yellow{background:var(--warn);color:#1f2937}
+.b-red{background:var(--danger)}
+.meta{margin-left:auto;color:var(--muted);font-size:12px}
 
 /* Footer */
-footer {
-  text-align:center;
-  background:#0d47a1;
-  color:#fff;
-  padding:15px;
-  margin-top:20px;
-}
-footer a { color:#ffeb3b; }
+.footer{margin-top:28px;background:var(--ink);color:#cbd5e1;padding:24px 0}
+.footer small{display:block;text-align:center}
+
+/* Floating CTA */
+.cta{position:fixed;right:16px;bottom:16px;background:var(--brand);color:#fff;padding:12px 16px;border-radius:14px;box-shadow:var(--shadow);font-weight:800}
+.cta:hover{background:var(--brand-dark)}
+
+  </style>
+</head>
+<body>
+  <!-- Top Brand -->
+  <header class="topbar">
+    <div class="container">
+      <div class="brand" aria-label="Updated Bihar">
+        UPDATED BIHAR
+        <small>Sarkari Result • Jobs • Admit Card • Result</small>
+      </div>
+    </div>
+  </header>  <!-- Nav -->  <nav class="nav" aria-label="मुख्य मेनू">
+    <div class="container row">
+      <a href="#jobs">Latest Job</a>
+      <a href="#admit">Admit Card</a>
+      <a href="#result">Result</a>
+      <a href="#admission">Admission</a>
+      <a href="#syllabus">Syllabus</a>
+      <a href="#answer">Answer Key</a>
+      <span class="search">
+        <input type="search" placeholder="खोजें: Exam, Post, Board..." aria-label="Search" />
+        <button>Search</button>
+      </span>
+    </div>
+  </nav>  <main class="container">
+    <!-- Quick Links -->
+    <section class="chips" aria-label="Quick Apply">
+      <a class="chip" href="#">
+        <b>UP Police SI Online Form</b>
+        <span>4543 Post</span>
+      </a>
+      <a class="chip" href="#">
+        <b>IBPS Clerk 15th Form</b>
+        <span>10277 Post</span>
+      </a>
+      <a class="chip" href="#">
+        <b>BSF HC RO / RM</b>
+        <span>1121 Post</span>
+      </a>
+      <a class="chip" href="#">
+        <b>UP Police Constable</b>
+        <span>19220 Post</span>
+      </a>
+    </section><!-- Three Columns -->
+<section class="grid">
+  <!-- Results -->
+  <article id="result" class="card">
+    <h2><span class="dot green"></span> Results</h2>
+    <div class="body">
+      <ul class="list">
+        <li>
+          <a href="#">BPSC School Teacher PGT Result 2025 – Out</a>
+          <span class="badge b-green">Out</span>
+          <span class="meta">Updated: 23 Aug</span>
+        </li>
+        <li>
+          <a href="#">RPSC Librarian 2024 Result</a>
+          <span class="badge b-yellow">Merit</span>
+          <span class="meta">Updated: 21 Aug</span>
+        </li>
+        <li>
+          <a href="#">SSC Phase 13 Re-Exam City Details 2025</a>
+          <span class="badge b-red">New</span>
+          <span class="meta">Updated: 20 Aug</span>
+        </li>
+        <li>
+          <a href="#">Haryana Board Class 10th Compartmental Result 2025</a>
+          <span class="badge b-green">Out</span>
+          <span class="meta">Updated: 18 Aug</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Admit Cards -->
+  <article id="admit" class="card">
+    <h2><span class="dot blue"></span> Admit Cards</h2>
+    <div class="body">
+      <ul class="list">
+        <li>
+          <a href="#">UPSSSC Civil Judge Pre Admit Card 2025</a>
+          <span class="badge b-red">New</span>
+          <span class="meta">Live Now</span>
+        </li>
+        <li>
+          <a href="#">Railway RRB Paramedical Staff DV Call Letter 2025</a>
+          <span class="badge b-yellow">DV</span>
+          <span class="meta">Check City</span>
+        </li>
+        <li>
+          <a href="#">BPSC Bihar Police Enforcement SI Admit Card 2025</a>
+          <span class="badge b-green">Out</span>
+          <span class="meta">Admit Card</span>
+        </li>
+        <li>
+          <a href="#">Navy Civilian Admit Card 2025</a>
+          <span class="badge b-red">New</span>
+          <span class="meta">Download</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Latest Jobs -->
+  <article id="jobs" class="card">
+    <h2><span class="dot orange"></span> Latest Jobs</h2>
+    <div class="body">
+      <ul class="list">
+        <li>
+          <a href="#">UP Police SI Online Form 2025 (4543 Post)</a>
+          <span class="badge b-red">Apply</span>
+          <span class="meta">Last Date: 12 Sep</span>
+        </li>
+        <li>
+          <a href="#">IBPS Clerk 15th Form 2025 (10277 Post)</a>
+          <span class="badge b-red">Apply</span>
+          <span class="meta">Extended</span>
+        </li>
+        <li>
+          <a href="#">RRB WCR Apprentice Online Form 2025</a>
+          <span class="badge b-yellow">Apprentice</span>
+          <span class="meta">Open</span>
+        </li>
+        <li>
+          <a href="#">AAI Junior Executive Online Form 2025</a>
+          <span class="badge b-red">New</span>
+          <span class="meta">Graduate</span>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- Info Strip -->
+<section class="card" style="margin-top:18px">
+  <div class="body" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+    <div>
+      <strong>Updated Bihar</strong> आपके लिए लाता है नवीनतम सरकारी नौकरी, परीक्षा परिणाम, एडमिट कार्ड, सिलेबस और Answer Key की सटीक अपडेट।
+    </div>
+    <a class="cta" href="#">Join WhatsApp</a>
+  </div>
+</section>
+
+<!-- Secondary Sections -->
+<section class="grid" style="margin-top:18px">
+  <article id="admission" class="card">
+    <h2><span class="dot blue"></span> Admission</h2>
+    <div class="body">
+      <ul class="list">
+        <li><a href="#">NTA CUET UG 2025 Registration</a><span class="meta">Opens Soon</span></li>
+        <li><a href="#">Bihar DCECE 2025 Counseling</a><span class="meta">Round 1</span></li>
+      </ul>
+    </div>
+  </article>
+  <article id="syllabus" class="card">
+    <h2><span class="dot green"></span> Syllabus</h2>
+    <div class="body">
+      <ul class="list">
+        <li><a href="#">SSC CGL 2025 Syllabus PDF</a><span class="meta">Tier I + II</span></li>
+        <li><a href="#">BPSC AE Syllabus</a><span class="meta">Download</span></li>
+      </ul>
+    </div>
+  </article>
+  <article id="answer" class="card">
+    <h2><span class="dot orange"></span> Answer Key</h2>
+    <div class="body">
+      <ul class="list">
+        <li><a href="#">SSC GD 2025 PET/PST Admit & Key</a><span class="meta">Objection Window</span></li>
+        <li><a href="#">RRB Technician Answer Key</a><span class="meta">Shift-wise</span></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+  </main>  <footer class="footer">
+    <div class="container">
+      <small>© <span id="yr"></span> Updated Bihar • This is a demo template inspired by Sarkari Result interface.</small>
+    </div>
+  </footer>  <script>
+    // Set current year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script></body>
+</html>
