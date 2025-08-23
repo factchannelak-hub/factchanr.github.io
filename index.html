@@ -2,116 +2,344 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sarkari Result – All Links</title>
+  <title>रोज़गार पोर्टल – Sarkari Result Style</title>
+  <meta name="description" content="Government jobs, admit cards, results, syllabus and more – Sarkari Result style portal (demo template)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23d10000'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='48' fill='white' font-family='Arial'%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E"/>
   <style>
     :root{
-      --bg:#0b1020; --card:#121933; --muted:#a0a6c3; --text:#e7ecff; --accent:#5b8cff; --chip:#1d2750;
+      --brand:#d10000;/* inspired red */
+      --brand-dark:#a80000;
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --ok:#0d9488;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Noto Sans",sans-serif;background:linear-gradient(160deg,var(--bg),#0e1226 50%,#111633);color:var(--text)}
-    header{position:sticky;top:0;backdrop-filter:saturate(150%) blur(6px);background:rgba(10,14,33,.6);border-bottom:1px solid #1f2546;z-index:20}
-    .wrap{max-width:1024px;margin:auto;padding:16px}
-    .brand{display:flex;gap:10px;align-items:center}
-    .brand h1{font-size:20px;margin:0}
-    .brand small{color:var(--muted)}
-    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    input[type="search"], select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a3160;background:#0f1530;color:var(--text)}
-    main{padding:20px 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-    .card{background:var(--card);border:1px solid #222a55;border-radius:16px;padding:14px;transition:transform .12s ease,box-shadow .12s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .chip{display:inline-flex;align-items:center;gap:6px;background:var(--chip);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
-    .title{display:block;margin:10px 0 6px;font-weight:650;color:var(--text);text-decoration:none}
-    .title:hover{color:var(--accent)}
-    .meta{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
-    footer{color:#95a0cf;border-top:1px dashed #2a3160;margin-top:28px;padding:20px 0}
-    .empty{opacity:.8;text-align:center;padding:28px;border:1px dashed #2a3160;border-radius:16px}
+    html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    /* Header */
+    .topbar{background:var(--brand);color:#fff}
+    .topbar .container{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:8px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--brand);padding:8px 12px;border-radius:999px;font-weight:700}
+    .badge svg{width:18px;height:18px}
+    .title{display:flex;align-items:center;gap:12px}
+    .title h1{font-size:clamp(20px,3.2vw,32px);margin:0;font-weight:800;letter-spacing:.3px}
+    .subtitle{font-size:12px;opacity:.9}/* Navbar */
+.nav{position:sticky;top:0;z-index:30;background:#111827;color:#fff;border-bottom:2px solid var(--brand)}
+.nav .container{display:flex;gap:12px;align-items:center;padding:8px 0;flex-wrap:wrap}
+.nav a{color:#fff;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{background:#1f2937}
+.spacer{flex:1}
+.search{display:flex;gap:8px;align-items:center;background:#1f2937;border:1px solid #374151;border-radius:10px;padding:6px 10px}
+.search input{border:none;background:transparent;color:#fff;outline:none;min-width:200px}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#fff,transparent);padding:16px 0}
+.marquee{background:#fff;border:1px solid #e5e7eb;border-left:6px solid var(--brand);padding:8px 12px;border-radius:10px;white-space:nowrap;overflow:hidden}
+.marquee span{display:inline-block;padding-right:28px;animation:s 20s linear infinite}
+@keyframes s{to{transform:translateX(-100%)}}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.col-8{grid-column:span 12}
+.col-4{grid-column:span 12}
+@media(min-width:980px){.col-8{grid-column:span 8}.col-4{grid-column:span 4}}
+
+.card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.card h3{margin:0;padding:12px 16px;border-bottom:1px solid #e5e7eb;background:linear-gradient(180deg,#fff,#fafafa);border-top-left-radius:16px;border-top-right-radius:16px}
+.card .body{padding:8px 16px 16px}
+
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #eef2f7;font-size:15px}
+th{text-align:left;font-weight:700;color:#111827}
+tr:hover{background:#fafafa}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid #e5e7eb;background:#fff}
+.tag.ok{border-color:#99f6e4;background:#ecfeff;color:#065f46}
+.tag.warn{border-color:#fecaca;background:#fff1f2;color:#7f1d1d}
+.pill{display:inline-block;background:var(--brand);color:#fff;font-size:12px;padding:4px 8px;border-radius:999px}
+
+.quicklinks{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:720px){.quicklinks{grid-template-columns:repeat(4,1fr)}}
+.quicklinks a{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:10px 12px;font-weight:600}
+.quicklinks a:hover{transform:translateY(-2px);transition:.15s}
+
+/* Footer */
+footer{margin-top:28px;background:#0b0f19;color:#c9d1d9}
+footer .container{display:grid;gap:18px;grid-template-columns:repeat(12,1fr);padding:24px 0}
+.fcol{grid-column:span 12}
+@media(min-width:980px){.fcol{grid-column:span 4}}
+.copy{background:#0a0d16;color:#94a3b8;padding:10px 0;font-size:13px;border-top:1px solid #111827}
+.note{font-size:12px;color:#6b7280}
+
+.btn{display:inline-flex;gap:8px;align-items:center;background:var(--brand);color:white;border:none;border-radius:12px;padding:8px 12px;font-weight:700;cursor:pointer}
+.btn:hover{background:var(--brand-dark)}
+
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="#5b8cff" stroke-width="1.5"/><path d="M8 9h8M8 12h8M8 15h5" stroke="#c6d4ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="title">
+        <span class="badge" aria-label="verified">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.09 4.24L19 7l-3.4 3.32L16.18 15 12 12.9 7.82 15l.58-4.68L5 7l4.91-.76L12 2z" fill="currentColor"/></svg>
+          TRUSTED
+        </span>
         <div>
-          <h1>Sarkari Result – All Links</h1>
-          <small>एक ही पेज पर सारे रिज़ल्ट्स / Answer Keys / Merit Lists के लिंक जोड़ें</small>
+          <h1>रोज़गार पोर्टल</h1>
+          <div class="subtitle">Jobs • Admit Card • Result • Syllabus • answer key • admission</div>
         </div>
       </div>
-      <div class="controls">
-        <input id="q" type="search" placeholder="खोजें: जैसे 'BTSC', 'Railway', '2025' …" />
-        <select id="dept">
-          <option value="">सभी विभाग</option>
-          <option>BTSC</option>
-          <option>Bihar Police</option>
-          <option>Railway</option>
-          <option>Education</option>
-          <option>Other</option>
-        </select>
+      <a class="btn" href="#latest">आज की अपडेट</a>
+    </div>
+  </div>  <!-- Navbar -->  <nav class="nav" aria-label="primary">
+    <div class="container">
+      <a href="#latest">Latest</a>
+      <a href="#jobs">Jobs</a>
+      <a href="#admit">Admit Card</a>
+      <a href="#result">Result</a>
+      <a href="#answer">Answer Key</a>
+      <a href="#syllabus">Syllabus</a>
+      <a href="#state">State</a>
+      <span class="spacer"></span>
+      <div class="search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search" placeholder="सर्च करें: SSC, UPSC, Police…" aria-label="search jobs"/>
       </div>
     </div>
-  </header>  <main class="wrap">
-    <section>
-      <h2 style="margin:0 0 12px; font-size:18px; color:#cbd5ff">Latest Results</h2>
-      <div id="cards" class="grid"></div>
-      <div id="empty" class="empty" style="display:none">कोई नतीजा नहीं मिला। ऊपर सर्च/फ़िल्टर बदलें।</div>
-    </section><footer>
-  <div>Note: नीचे दिए गये उदाहरणों में href="#" है — अपनी वास्तविक URL यहाँ डालें। आप चाहें तो <code>data</code> एरे में नई एंट्री जोड़ते जाएँ।</div>
-</footer>
-
-  </main>  <script>
-    // ⬇️ यहीं अपनी असली लिंक्स भरें — जितने चाहें उतने
-    const data = [
-      // उदाहरण (स्क्रीनशॉट के आधार पर)
-      { title: "BTSC Staff Nurse Result 2025", url: "#", dept: "BTSC", date: "2025", tag: "Result" },
-      { title: "Sakshamta Pariksha Answer Key 2025", url: "#", dept: "Education", date: "2025", tag: "Answer Key" },
-      { title: "Railway RRB Paramedical Result 2025", url: "#", dept: "Railway", date: "2025", tag: "Result" },
-      { title: "IB Security Assistant Result 2025", url: "#", dept: "Other", date: "2025", tag: "Result" },
-      { title: "Bihar ANM Result / Merit List 2025", url: "#", dept: "BTSC", date: "2025", tag: "Merit List" },
-      { title: "Bihar Police SI Result 2025", url: "#", dept: "Bihar Police", date: "2025", tag: "Result" },
-      // ---- अपनी और एंट्रीज़ नीचे जोड़ें ----
-      // { title: "Exam Name Result Year", url: "https://your-url.com/page", dept: "Department", date: "2025", tag: "Result" },
-    ];
-
-    const cardsEl = document.getElementById('cards');
-    const emptyEl = document.getElementById('empty');
-    const qEl = document.getElementById('q');
-    const deptEl = document.getElementById('dept');
-
-    function render(list){
-      cardsEl.innerHTML = '';
-      if(!list.length){ emptyEl.style.display = 'block'; return; }
-      emptyEl.style.display = 'none';
-      list.forEach(item => {
-        const el = document.createElement('article');
-        el.className = 'card';
-        el.innerHTML = `
-          <span class="chip">${item.tag || 'Result'}</span>
-          <a class="title" href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
-          <div class="meta">
-            <span>विभाग: ${item.dept || '—'}</span>
-            <span>Year: ${item.date || ''}</span>
+  </nav>  <!-- Hero / ticker -->  <section class="hero container">
+    <div class="marquee" aria-live="polite">
+      <span>Breaking: नए नोटिफिकेशन और परिणाम सीधे आधिकारिक वेबसाइट पर देखें। फेक साइट से सावधान रहें।</span>
+      <span>हमेशा eligibility, age limit, syllabus और apply dates आधिकारिक विज्ञापन में verify करें।</span>
+    </div>
+  </section>  <!-- Main -->  <main class="container">
+    <div class="grid">
+      <!-- Left -->
+      <section class="col-8">
+        <div id="latest" class="card">
+          <h3>लेटेस्ट अपडेट</h3>
+          <div class="body">
+            <table id="latestTable" aria-describedby="latest updates">
+              <thead>
+                <tr>
+                  <th>तारीख</th>
+                  <th>शीर्षक</th>
+                  <th>श्रेणी</th>
+                  <th>लिंक</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- All links below are to official portals and open in new tab -->
+                <tr>
+                  <td>23-08-2025</td>
+                  <td>SSC विभिन्न भर्ती – आधिकारिक पोर्टल</td>
+                  <td><span class="tag ok">Jobs</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://ssc.nic.in/">ssc.nic.in</a></td>
+                </tr>
+                <tr>
+                  <td>22-08-2025</td>
+                  <td>UPSC Latest Examinations/Admit Cards</td>
+                  <td><span class="tag">Admit Card</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://upsc.gov.in/">upsc.gov.in</a></td>
+                </tr>
+                <tr>
+                  <td>21-08-2025</td>
+                  <td>IBPS CRP – Apply / Admit Card / Result</td>
+                  <td><span class="tag">Bank</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://www.ibps.in/">ibps.in</a></td>
+                </tr>
+                <tr>
+                  <td>20-08-2025</td>
+                  <td>NTA परीक्षाएँ – JEE/NEET/UGC NET</td>
+                  <td><span class="tag">Exam</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://nta.ac.in/">nta.ac.in</a></td>
+                </tr>
+                <tr>
+                  <td>19-08-2025</td>
+                  <td>रेलवे भर्ती – RRBs / RRCs</td>
+                  <td><span class="tag">Jobs</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://indianrailways.gov.in/">indianrailways.gov.in</a></td>
+                </tr>
+                <tr>
+                  <td>18-08-2025</td>
+                  <td>Indian Army Agniveer / Officer Entries</td>
+                  <td><span class="tag">Defence</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://joinindianarmy.nic.in/">joinindianarmy.nic.in</a></td>
+                </tr>
+                <tr>
+                  <td>18-08-2025</td>
+                  <td>Indian Navy – भर्ती और एडमिट कार्ड</td>
+                  <td><span class="tag">Defence</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://www.joinindiannavy.gov.in/">joinindiannavy.gov.in</a></td>
+                </tr>
+                <tr>
+                  <td>17-08-2025</td>
+                  <td>Indian Air Force – भर्ती</td>
+                  <td><span class="tag">Defence</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://indianairforce.nic.in/">indianairforce.nic.in</a></td>
+                </tr>
+                <tr>
+                  <td>16-08-2025</td>
+                  <td>RPSC – राजस्थान भर्ती</td>
+                  <td><span class="tag">State</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://rpsc.rajasthan.gov.in/">rpsc.rajasthan.gov.in</a></td>
+                </tr>
+                <tr>
+                  <td>16-08-2025</td>
+                  <td>BPSC – बिहार भर्ती/परिणाम</td>
+                  <td><span class="tag">State</span></td>
+                  <td><a target="_blank" rel="noopener" href="https://www.bpsc.bih.nic.in/">bpsc.bih.nic.in</a></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        `;
-        cardsEl.appendChild(el);
+        </div><div id="jobs" class="card" style="margin-top:16px;">
+      <h3>नवीनतम नौकरियाँ</h3>
+      <div class="body">
+        <div class="quicklinks">
+          <a target="_blank" rel="noopener" href="https://ssc.nic.in/">SSC भर्तियाँ</a>
+          <a target="_blank" rel="noopener" href="https://upsc.gov.in/">UPSC आवेदान</a>
+          <a target="_blank" rel="noopener" href="https://www.ibps.in/">IBPS बैंकिंग</a>
+          <a target="_blank" rel="noopener" href="https://www.joinindiannavy.gov.in/">Navy Jobs</a>
+          <a target="_blank" rel="noopener" href="https://joinindianarmy.nic.in/">Army Jobs</a>
+          <a target="_blank" rel="noopener" href="https://indianairforce.nic.in/">Air Force</a>
+          <a target="_blank" rel="noopener" href="https://rpsc.rajasthan.gov.in/">RPSC</a>
+          <a target="_blank" rel="noopener" href="https://www.bpsc.bih.nic.in/">BPSC</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="admit" class="card" style="margin-top:16px;">
+      <h3>एडमिट कार्ड</h3>
+      <div class="body">
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://ssc.nic.in/Portal/AdmitCard">SSC Admit Card Portal</a></li>
+          <li><a target="_blank" rel="noopener" href="https://upsconline.nic.in/eadmitcard/">UPSC e-Admit Card</a></li>
+          <li><a target="_blank" rel="noopener" href="https://ibpsonline.ibps.in/">IBPS Online Admit Cards</a></li>
+          <li><a target="_blank" rel="noopener" href="https://examinationservices.nic.in/">NTA Admit Card</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="result" class="card" style="margin-top:16px;">
+      <h3>परिणाम</h3>
+      <div class="body">
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://ssc.nic.in/Portal/Results">SSC Results</a></li>
+          <li><a target="_blank" rel="noopener" href="https://upsc.gov.in/examinations/final-results">UPSC Final Results</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.ibps.in/crp-result/">IBPS Results</a></li>
+          <li><a target="_blank" rel="noopener" href="https://nta.ac.in/Result">NTA Results</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="answer" class="card" style="margin-top:16px;">
+      <h3>आंसर की / OMR</h3>
+      <div class="body">
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://ssc.nic.in/Portal/AnswerKey">SSC Answer Keys</a></li>
+          <li><a target="_blank" rel="noopener" href="https://upsc.gov.in/examinations/answer-keys">UPSC Answer Keys</a></li>
+          <li><a target="_blank" rel="noopener" href="https://nta.ac.in/Downloads">NTA Answer Keys</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="syllabus" class="card" style="margin-top:16px;">
+      <h3>सिलेबस</h3>
+      <div class="body">
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://ssc.nic.in/Downloads">SSC Syllabus (PDF)</a></li>
+          <li><a target="_blank" rel="noopener" href="https://upsc.gov.in/examinations/syllabus">UPSC Syllabus</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.ibps.in/exam-pattern-syllabus/">IBPS Exam Pattern & Syllabus</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Right -->
+  <aside class="col-4">
+    <div class="card">
+      <h3>इम्पॉर्टेन्ट लिंक्स</h3>
+      <div class="body">
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://uidai.gov.in/">Aadhaar (UIDAI)</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.nvsp.in/">Voter Services</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.onlinesbi.sbi/">SBI Online</a></li>
+          <li><a target="_blank" rel="noopener" href="https://digilocker.gov.in/">DigiLocker</a></li>
+          <li><a target="_blank" rel="noopener" href="https://parivahan.gov.in/">Parivahan</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>स्टेट-वाइज़</h3>
+      <div class="body">
+        <ul>
+          <li><a target="_blank" rel="noopener" href="https://uppsc.up.nic.in/">UPPSC</a></li>
+          <li><a target="_blank" rel="noopener" href="https://mpsc.gov.in/">MPSC</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.tnpsc.gov.in/">TNPSC</a></li>
+          <li><a target="_blank" rel="noopener" href="https://psc.ap.gov.in/">APPSC</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.wbpsc.gov.in/">WBPSC</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>हेल्पडेस्क</h3>
+      <div class="body">
+        <p class="note">यह एक डेमो टेम्पलेट है। वास्तविक आवेदन/भुगतान हमेशा आधिकारिक वेबसाइट पर ही करें।</p>
+        <a class="btn" href="#contact">Contact / Report Link</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+  </main>  <footer>
+    <div class="container">
+      <div class="fcol">
+        <h3 style="margin:0 0 8px 0;">Disclaimer</h3>
+        <p class="note">यह साइट <strong>Sarkari Result</strong> की आधिकारिक वेबसाइट नहीं है। यह केवल शिक्षण/डेमो हेतु एक समान UI टेम्पलेट है। सभी ट्रेडमार्क/लोगो उनके संबंधित मालिकों के हैं।</p>
+      </div>
+      <div class="fcol">
+        <h3 style="margin:0 0 8px 0;">About</h3>
+        <p class="note">सरकारी नौकरियों, प्रवेश, एडमिट कार्ड, परिणाम आदि की त्वरित जानकारी के लिए साफ़ और तेज़ इंटरफ़ेस।</p>
+      </div>
+      <div class="fcol" id="contact">
+        <h3 style="margin:0 0 8px 0;">Contact</h3>
+        <p class="note">गलत/टूटी लिंक रिपोर्ट करने के लिए ईमेल करें: support@example.com</p>
+      </div>
+    </div>
+    <div class="copy">
+      <div class="container">© <span id="year"></span> Rojgar Portal • All rights reserved</div>
+    </div>
+  </footer>  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple search filter (client-side) for latest table
+    const input = document.getElementById('search');
+    const rows = Array.from(document.querySelectorAll('#latestTable tbody tr'));
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+      rows.forEach(r => {
+        r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
-    }
+    });
 
-    function filter(){
-      const q = (qEl.value || '').toLowerCase().trim();
-      const d = (deptEl.value || '').toLowerCase().trim();
-      const out = data.filter(x => {
-        const okText = !q || [x.title, x.dept, x.tag, x.date].filter(Boolean).join(' ').toLowerCase().includes(q);
-        const okDept = !d || (x.dept||'').toLowerCase() === d;
-        return okText && okDept;
-      });
-      render(out);
-    }
-
-    qEl.addEventListener('input', filter);
-    deptEl.addEventListener('change', filter);
-
-    // initial render
-    render(data);
+    // Smooth scroll for nav anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
   </script></body>
 </html>
